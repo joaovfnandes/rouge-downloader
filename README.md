@@ -4,6 +4,20 @@ Aplicativo local para pesquisar e baixar galerias, acompanhar imagens em tempo r
 
 > Projeto destinado exclusivamente a maiores de 18 anos. Nenhuma galeria ou imagem de terceiros está incluída no repositório ou nas Releases. Use somente de acordo com as leis aplicáveis e os termos do serviço acessado.
 
+## Interface
+
+### Downloads sem sair da coleção
+
+O painel lateral reúne uma nova busca, as tags descobertas e todo o andamento do download em um único lugar.
+
+![Painel lateral de downloads do Rouge](docs/screenshots/downloads-panel.png)
+
+### Sua coleção no computador
+
+Explore as galerias salvas e filtre instantaneamente por título, código ou tag.
+
+![Coleção local do Rouge com campo de filtro](docs/screenshots/collection.png)
+
 ## Versão portátil v1.1.0
 
 Baixe `Rouge-Windows-x64-v1.1.0.zip` na [Release mais recente](https://github.com/joaovfnandes/rouge-downloader/releases/latest), extraia a pasta inteira e abra `Rouge.exe`.
