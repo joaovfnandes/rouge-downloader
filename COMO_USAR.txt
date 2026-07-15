@@ -1,0 +1,13 @@
+ROUGE PORTÁTIL
+===============
+
+1. Abra Rouge.exe com dois cliques.
+2. O site será aberto automaticamente no navegador.
+3. Deixe a janela preta do Rouge aberta enquanto estiver usando o programa.
+4. Para encerrar completamente, feche essa janela.
+
+Sua coleção fica na pasta nhentai_out.
+As tags descobertas ficam no arquivo tag_history.json.
+
+Para levar o programa a outro computador Windows, copie a pasta Rouge inteira.
+Não mova apenas o Rouge.exe, pois a pasta _internal também é necessária.

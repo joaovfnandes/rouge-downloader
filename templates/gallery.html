@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>#{{ gid }} — {{ title }}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{color-scheme:dark;--night:#090407;--wine:#16070d;--pink:#ff2d78;--rose:#ff7aa8;--blush:#ffc1d2;--ivory:#fff7f5;--muted:#b996a2;--line:rgba(255,193,210,.18)}
+  *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--night);color:var(--ivory);font:15px/1.5 Manrope,"Segoe UI",sans-serif}body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 50% 0,rgba(217,11,62,.15),transparent 34%)}:focus-visible{outline:3px solid var(--rose);outline-offset:3px}
+  .bar{position:sticky;top:0;z-index:5;min-height:78px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:22px;padding:11px 28px;border-bottom:1px solid var(--line);background:rgba(9,4,7,.82);backdrop-filter:blur(24px)}
+  .back{display:flex;align-items:center;gap:9px;color:var(--muted);text-decoration:none;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}.back b{color:var(--pink);font-size:21px}.back:hover{color:var(--ivory)}.heading{min-width:0;text-align:center}h1{margin:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font:500 22px/1 "Bodoni Moda",serif}.id{margin-top:5px;color:var(--pink);font:600 8px "IBM Plex Mono",monospace;letter-spacing:.1em}.count{color:var(--muted);font:500 10px "IBM Plex Mono",monospace;white-space:nowrap}
+  .strip{width:min(1100px,calc(100% - 36px));margin:28px auto 5px;display:flex;gap:7px;overflow-x:auto;padding:10px 2px;scrollbar-color:var(--pink) transparent}.strip a{flex:0 0 auto;min-width:35px;height:35px;display:grid;place-items:center;border:1px solid var(--line);border-radius:99px;background:var(--wine);color:var(--muted);text-decoration:none;font:500 9px "IBM Plex Mono",monospace;transition:.18s}.strip a:hover{border-color:var(--rose);background:rgba(255,45,120,.14);color:var(--ivory)}
+  .reader{width:min(970px,100%);margin:auto;padding:26px 20px 90px;display:grid;gap:30px}figure{position:relative;margin:0}img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:10px;background:#050204;box-shadow:0 28px 90px rgba(0,0,0,.48)}figcaption{position:absolute;right:12px;bottom:12px;padding:7px 10px;border:1px solid var(--line);border-radius:99px;background:rgba(9,4,7,.76);color:var(--blush);font:500 9px "IBM Plex Mono",monospace;backdrop-filter:blur(12px)}
+  .nav{position:fixed;right:19px;bottom:21px;z-index:6;display:flex;gap:8px}.nav button{width:45px;height:45px;border:1px solid rgba(255,193,210,.26);border-radius:50%;background:rgba(22,7,13,.88);color:var(--rose);font-size:18px;box-shadow:0 10px 30px rgba(0,0,0,.35);cursor:pointer;backdrop-filter:blur(12px)}.nav button:hover{border-color:var(--pink);background:var(--pink);color:white}
+  @media(max-width:620px){.bar{grid-template-columns:auto minmax(0,1fr);padding-inline:13px}.back span,.count{display:none}.reader{padding:18px 8px 70px;gap:14px}img{border-radius:5px}.strip{width:calc(100% - 20px);margin-top:18px}.nav{right:12px;bottom:14px}}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="bar"><a class="back" href="/collection"><b>←</b><span>Voltar à coleção</span></a><div class="heading"><h1>{{ title }}</h1><div class="id">ARQUIVO #{{ gid }}</div></div><div class="count">{{ files|length }} {{ 'PÁGINA' if files|length == 1 else 'PÁGINAS' }}</div></header>
+<nav class="strip" aria-label="Ir para uma página">{% for f in files %}<a href="#p-{{ loop.index }}" aria-label="Ir para a página {{ loop.index }}">{{ loop.index }}</a>{% endfor %}</nav>
+<main class="reader">{% for f in files %}<figure id="p-{{ loop.index }}"><img src="/img/{{ gid }}/{{ f }}" loading="{{ 'eager' if loop.first else 'lazy' }}" alt="Página {{ loop.index }} de {{ title }}"><figcaption>{{ loop.index }} / {{ files|length }}</figcaption></figure>{% endfor %}</main>
+<div class="nav"><button type="button" onclick="scrollTo({top:0,behavior:'smooth'})" aria-label="Ir para o início">↑</button><button type="button" onclick="scrollTo({top:document.body.scrollHeight,behavior:'smooth'})" aria-label="Ir para o fim">↓</button></div>
+</body>
+</html>

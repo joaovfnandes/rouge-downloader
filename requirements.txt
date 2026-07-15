@@ -1,0 +1,6 @@
+# nhentai scraper - dependencies
+# Web UI requires:
+flask>=3.0
+#
+# Scraper core uses only Python 3.6+ standard library:
+#   argparse, json, os, sys, time, urllib.request, urllib.parse

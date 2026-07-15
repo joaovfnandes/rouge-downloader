@@ -1,0 +1,16 @@
+.venv/
+.build-venv/
+build/
+dist/
+release/
+release-test/
+*.spec
+*.zip
+__pycache__/
+*.pyc
+*.tmp
+*.log
+.env
+logs/
+nhentai_out/
+tag_history.json
