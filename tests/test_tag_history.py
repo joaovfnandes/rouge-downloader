@@ -33,6 +33,8 @@ class TagHistoryTest(unittest.TestCase):
                 self.assertEqual(suggestions[0]["name"], "feet")
                 self.assertEqual(suggestions[0]["count"], 2)
                 self.assertEqual({item["name"] for item in suggestions}, {"feet", "group", "catgirl"})
+                self.assertEqual(app.get_gallery_tag_map()[101], ["feet", "group"])
+                self.assertEqual(app.get_gallery_tag_map()[102], ["catgirl", "feet"])
 
                 response = app.app.test_client().get("/")
                 self.assertEqual(response.status_code, 200)

@@ -103,7 +103,7 @@ def _read_tag_history():
         pass
     return {"version": 1, "galleries": {}, "tags": {}}
 
-def get_tag_suggestions(limit=24):
+def get_tag_suggestions(limit=200):
     with tag_lock:
         records = list(_read_tag_history()["tags"].values())
     records.sort(key=lambda item: (-int(item.get("count", 0)), -float(item.get("last_seen", 0)), item.get("name", "")))
@@ -134,6 +134,17 @@ def record_gallery_tags(gid, metadata):
         os.replace(temp_file, TAG_HISTORY_FILE)
     return True
 
+def get_gallery_tag_map():
+    with tag_lock:
+        galleries = dict(_read_tag_history().get("galleries", {}))
+    result = {}
+    for gid, names in galleries.items():
+        try:
+            result[int(gid)] = [str(name) for name in names]
+        except (TypeError, ValueError):
+            continue
+    return result
+
 def find_gallery_dir(gid):
     if not os.path.isdir(OUT_DIR):
         return None
@@ -146,6 +157,7 @@ def find_gallery_dir(gid):
 def list_galleries():
     if not os.path.isdir(OUT_DIR):
         return []
+    tag_map = get_gallery_tag_map()
     out = []
     for name in sorted(os.listdir(OUT_DIR)):
         full = os.path.join(OUT_DIR, name)
@@ -158,7 +170,7 @@ def list_galleries():
         title = m.group(2).replace("_", " ")
         files = [f for f in os.listdir(full) if f.lower().endswith((".webp", ".jpg", ".jpeg", ".png"))]
         files.sort()
-        out.append({"id": gid, "title": title, "folder": name, "pages": len(files), "first": files[0] if files else None})
+        out.append({"id": gid, "title": title, "folder": name, "pages": len(files), "first": files[0] if files else None, "tags": tag_map.get(gid, [])})
     return out
 
 def run_scrape(tags, count, delay, parallel, ua):

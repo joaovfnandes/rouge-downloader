@@ -32,6 +32,8 @@ jobs:
         run: |
           New-Item -ItemType Directory -Force -Path dist\Rouge\nhentai_out | Out-Null
           Copy-Item COMO_USAR.txt dist\Rouge\COMO_USAR.txt
+          Copy-Item GUIA_PORTATIL.md dist\Rouge\GUIA_PORTATIL.md
+          Copy-Item README.md dist\Rouge\LEIA-ME.md
           Compress-Archive -Path dist\Rouge -DestinationPath Rouge-Windows-x64.zip
 
       - name: Upload portable artifact

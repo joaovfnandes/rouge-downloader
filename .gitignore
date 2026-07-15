@@ -4,6 +4,7 @@ build/
 dist/
 release/
 release-test/
+release-test*/
 *.spec
 *.zip
 __pycache__/

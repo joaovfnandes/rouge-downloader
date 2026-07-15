@@ -37,6 +37,7 @@ if not exist "dist\Rouge\nhentai_out" mkdir "dist\Rouge\nhentai_out"
 if exist "tag_history.json" copy /Y "tag_history.json" "dist\Rouge\tag_history.json" >nul
 if exist "README.md" copy /Y "README.md" "dist\Rouge\LEIA-ME.md" >nul
 if exist "COMO_USAR.txt" copy /Y "COMO_USAR.txt" "dist\Rouge\COMO_USAR.txt" >nul
+if exist "GUIA_PORTATIL.md" copy /Y "GUIA_PORTATIL.md" "dist\Rouge\GUIA_PORTATIL.md" >nul
 
 echo [4/4] Pronto.
 echo.
