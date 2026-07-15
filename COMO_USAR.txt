@@ -1,4 +1,4 @@
-ROUGE PORTÁTIL v1.1.0
+ROUGE PORTÁTIL v1.1.2
 ======================
 
 1. Extraia o ZIP inteiro antes de abrir.
@@ -7,7 +7,7 @@ ROUGE PORTÁTIL v1.1.0
 4. Deixe a janela preta do Rouge aberta enquanto estiver usando o programa.
 5. Para encerrar completamente, feche essa janela.
 
-NOVIDADES DA v1.1.0
+NOVIDADES DA v1.1.2
 -------------------
 - Filtro de tags com expansão da lista.
 - Filtro da coleção por título, código ou tag.

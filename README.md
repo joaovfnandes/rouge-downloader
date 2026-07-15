@@ -18,9 +18,9 @@ Explore as galerias salvas e filtre instantaneamente por título, código ou tag
 
 ![Coleção local do Rouge com campo de filtro](docs/screenshots/collection.png)
 
-## Versão portátil v1.1.0
+## Versão portátil v1.1.2
 
-Baixe `Rouge-Windows-x64-v1.1.0.zip` na [Release mais recente](https://github.com/joaovfnandes/rouge-downloader/releases/latest), extraia a pasta inteira e abra `Rouge.exe`.
+Baixe `Rouge-Windows-x64-v1.1.2.zip` na [Release mais recente](https://github.com/joaovfnandes/rouge-downloader/releases/latest), extraia a pasta inteira e abra `Rouge.exe`.
 
 Não é necessário instalar Python. Consulte [GUIA_PORTATIL.md](GUIA_PORTATIL.md) para instalação, atualização e solução de problemas.
 

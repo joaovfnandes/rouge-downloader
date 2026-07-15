@@ -1,8 +1,8 @@
-# Guia do Rouge Portátil v1.1.0
+# Guia do Rouge Portátil v1.1.2
 
 ## Instalação
 
-1. Baixe `Rouge-Windows-x64-v1.1.0.zip` na página Releases do GitHub.
+1. Baixe `Rouge-Windows-x64-v1.1.2.zip` na página Releases do GitHub.
 2. Extraia o ZIP inteiro para uma pasta comum, como Documentos.
 3. Abra `Rouge.exe`.
 4. Mantenha a janela do programa aberta enquanto estiver usando o site.
